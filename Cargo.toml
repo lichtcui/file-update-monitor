@@ -1,11 +1,11 @@
 [package]
 name = "file_update_monitor"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["licht.cui <lichtcui@gmail.com>"]
 edition = "2021"
 rust-version = "1.80"
 license = "MIT"
-description = "Ensure your Chromedriver remains up-to-date alongside your Chrome browser"
+description = "It watches a directory for file changes and triggers a callback when files are modified."
 homepage = "https://github.com/lichtcui/file_update_monitor"
 repository = "https://github.com/lichtcui/file_update_monitor"
 readme = "README.md"
