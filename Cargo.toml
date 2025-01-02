@@ -9,7 +9,7 @@ description = "Ensure your Chromedriver remains up-to-date alongside your Chrome
 homepage = "https://github.com/lichtcui/file_update_monitor"
 repository = "https://github.com/lichtcui/file_update_monitor"
 readme = "README.md"
-keywords = ["file modify monitor", "file update monitor"]
+keywords = ["file", "monitor", "watch", "filesystem", "notify"]
 
 [lib]
 name = "file_update_monitor"
