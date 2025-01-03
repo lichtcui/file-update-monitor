@@ -103,8 +103,10 @@ impl Monitor {
         while let Some(res) = rx.next().await {
             match res {
                 Ok(event) => {
-                    if let Some(path) = self.get_valid_path(event) {
-                        debouncer.put(path);
+                    if let Some(paths) = self.get_valid_paths(event) {
+                        for path in paths {
+                            debouncer.put(path);    
+                        }
                     }
                 }
                 Err(e) => eprintln!("File monitoring error: {:?}", e),
@@ -137,7 +139,7 @@ impl Monitor {
     /// Extract valid file path from filesystem event
     ///
     /// Only processes file content modification events, ignores other types of events
-    fn get_valid_path(&self, event: Event) -> Option<String> {
+    fn get_valid_paths(&self, event: Event) -> Option<Vec<String>> {
         if !matches!(
             event.kind,
             notify::EventKind::Modify(notify::event::ModifyKind::Data(
@@ -147,9 +149,12 @@ impl Monitor {
             return None;
         }
 
-        event
-            .paths
-            .first()
-            .map(|path| path.to_str().unwrap().to_string())
+        Some(
+            event
+                .paths
+                .iter()
+                .map(|path| path.to_str().unwrap().to_string())
+                .collect(),
+        )
     }
 }
