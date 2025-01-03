@@ -1,6 +1,6 @@
 [package]
 name = "file_update_monitor"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["licht.cui <lichtcui@gmail.com>"]
 edition = "2021"
 rust-version = "1.80"
