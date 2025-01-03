@@ -6,8 +6,8 @@ edition = "2021"
 rust-version = "1.80"
 license = "MIT"
 description = "It watches a directory for file changes and triggers a callback when files are modified."
-homepage = "https://github.com/lichtcui/file_update_monitor"
-repository = "https://github.com/lichtcui/file_update_monitor"
+homepage = "https://github.com/lichtcui/file-update-monitor"
+repository = "https://github.com/lichtcui/file-update-monitor"
 readme = "README.md"
 keywords = ["file", "monitor", "watch", "filesystem", "notify"]
 
